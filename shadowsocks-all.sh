@@ -4,7 +4,7 @@ export PATH
 #
 # Auto install Shadowsocks Server (all version)
 #
-# Copyright (C) 2016-2019 Teddysun <i@teddysun.com>
+# Copyright (C) 2019
 #
 # System Required:  CentOS 6+, Debian7+, Ubuntu12+
 #
@@ -24,8 +24,7 @@ export PATH
 # @madeye     <https://github.com/madeye>
 # @linusyang  <https://github.com/linusyang>
 # @Akkariiin  <https://github.com/Akkariiin>
-# 
-# Intro:  https://teddysun.com/486.html
+#
 
 red='\033[0;31m'
 green='\033[0;32m'
