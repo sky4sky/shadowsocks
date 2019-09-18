@@ -48,15 +48,15 @@ shadowsocks_python_file="shadowsocks-master"
 shadowsocks_python_url="https://github.com/shadowsocks/shadowsocks/archive/master.zip"
 shadowsocks_python_init="/etc/init.d/shadowsocks-python"
 shadowsocks_python_config="/etc/shadowsocks-python/config.json"
-shadowsocks_python_centos="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks"
-shadowsocks_python_debian="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-debian"
+shadowsocks_python_centos="https://raw.githubusercontent.com/willoong9559/shadowsocks_install/master/shadowsocks"
+shadowsocks_python_debian="https://raw.githubusercontent.com/willoong9559/shadowsocks_install/master/shadowsocks-debian"
 
 shadowsocks_r_file="shadowsocksr-3.2.2"
 shadowsocks_r_url="https://github.com/shadowsocksrr/shadowsocksr/archive/3.2.2.tar.gz"
 shadowsocks_r_init="/etc/init.d/shadowsocks-r"
 shadowsocks_r_config="/etc/shadowsocks-r/config.json"
-shadowsocks_r_centos="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR"
-shadowsocks_r_debian="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR-debian"
+shadowsocks_r_centos="https://raw.githubusercontent.com/willoong9559/shadowsocks_install/master/shadowsocksR"
+shadowsocks_r_debian="https://raw.githubusercontent.com/willoong9559/shadowsocks_install/master/shadowsocksR-debian"
 
 shadowsocks_go_file_64="shadowsocks-server-linux64-1.2.2"
 shadowsocks_go_url_64="https://dl.lamp.sh/shadowsocks/shadowsocks-server-linux64-1.2.2.gz"
@@ -64,13 +64,13 @@ shadowsocks_go_file_32="shadowsocks-server-linux32-1.2.2"
 shadowsocks_go_url_32="https://dl.lamp.sh/shadowsocks/shadowsocks-server-linux32-1.2.2.gz"
 shadowsocks_go_init="/etc/init.d/shadowsocks-go"
 shadowsocks_go_config="/etc/shadowsocks-go/config.json"
-shadowsocks_go_centos="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go"
-shadowsocks_go_debian="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go-debian"
+shadowsocks_go_centos="https://raw.githubusercontent.com/willoong9559/shadowsocks_install/master/shadowsocks-go"
+shadowsocks_go_debian="https://raw.githubusercontent.com/willoong9559/shadowsocks_install/master/shadowsocks-go-debian"
 
 shadowsocks_libev_init="/etc/init.d/shadowsocks-libev"
 shadowsocks_libev_config="/etc/shadowsocks-libev/config.json"
-shadowsocks_libev_centos="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev"
-shadowsocks_libev_debian="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian"
+shadowsocks_libev_centos="https://raw.githubusercontent.com/willoong9559/shadowsocks_install/master/shadowsocks-libev"
+shadowsocks_libev_debian="https://raw.githubusercontent.com/willoong9559/shadowsocks_install/master/shadowsocks-libev-debian"
 
 # Stream Ciphers
 common_ciphers=(
@@ -405,7 +405,6 @@ error_detect_depends(){
     ${command} > /dev/null 2>&1
     if [ $? -ne 0 ]; then
         echo -e "[${red}Error${plain}] Failed to install ${red}${depend}${plain}"
-        echo "Please visit: https://teddysun.com/486.html and contact."
         exit 1
     fi
 }
@@ -901,7 +900,6 @@ install_shadowsocks_python(){
     else
         echo
         echo -e "[${red}Error${plain}] ${software[0]} install failed."
-        echo "Please visit: https://teddysun.com/486.html and contact."
         install_cleanup
         exit 1
     fi
@@ -923,7 +921,6 @@ install_shadowsocks_r(){
     else
         echo
         echo -e "[${red}Error${plain}] ${software[1]} install failed."
-        echo "Please visit; https://teddysun.com/486.html and contact."
         install_cleanup
         exit 1
     fi
@@ -963,7 +960,6 @@ install_shadowsocks_go(){
     else
         echo
         echo -e "[${red}Error${plain}] ${software[2]} install failed."
-        echo "Please visit: https://teddysun.com/486.html and contact."
         install_cleanup
         exit 1
     fi
@@ -986,7 +982,6 @@ install_shadowsocks_libev(){
     else
         echo
         echo -e "[${red}Error${plain}] ${software[3]} install failed."
-        echo "Please visit: https://teddysun.com/486.html and contact."
         install_cleanup
         exit 1
     fi
@@ -1015,7 +1010,6 @@ install_shadowsocks_libev_obfs(){
         make install
         if [ ! "$(command -v obfs-server)" ]; then
             echo -e "[${red}Error${plain}] simple-obfs for ${software[${selected}-1]} install failed."
-            echo "Please visit: https://teddysun.com/486.html and contact."
             install_cleanup
             exit 1
         fi
