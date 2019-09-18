@@ -6,6 +6,8 @@ export PATH
 #
 # Copyright (C) 2019
 #
+# Thanks to teddysun
+#
 # System Required:  CentOS 6+, Debian7+, Ubuntu12+
 #
 # Reference URL:
@@ -620,8 +622,8 @@ install_select(){
 
 install_prepare_password(){
     echo "Please enter password for ${software[${selected}-1]}"
-    read -p "(Default password: teddysun.com):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
+    read -p "(Default password: 123456):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="123456"
     echo
     echo "password = ${shadowsockspwd}"
     echo
@@ -1152,7 +1154,6 @@ install_main(){
     fi
 
     echo
-    echo "Welcome to visit: https://teddysun.com/486.html"
     echo "Enjoy it!"
     echo
 }
